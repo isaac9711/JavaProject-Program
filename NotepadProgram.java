@@ -3,69 +3,69 @@ import java.awt.event.*;
 import java.awt.*;
 import java.io.*;
 
-public class NotepadProgram extends JFrame {		//ê°„ë‹¨í•œ ë©”ëª¨ì¥ í”„ë¡œê·¸ë¨
-	private JTextField notefilename = new JTextField(30);		//íŒŒì¼ì´ë¦„ì„ ì‘ì„±í•  í…ìŠ¤íŠ¸í•„ë“œ ìƒì„±
-	private JTextArea notefileedit = new JTextArea(15, 55);		//íŒŒì¼ë‚´ìš©ì„ ì‘ì„±í•  í…ìŠ¤íŠ¸ì•„ë¦¬ì•„ ìƒì„±
-	private JButton notefileopen = new JButton("ì—´ê¸°");			//íŒŒì¼ì—´ê¸°ë¥¼ ìœ„í•œ ë²„íŠ¼ ìƒì„±
-	private JButton notefilesave = new JButton("ì €ì¥");			//íŒŒì¼ì €ì¥ì„ ìœ„í•œ ë²„íŠ¼ ìƒì„±
-	private JButton newnote = new JButton("ìƒˆë¡œ ë§Œë“¤ê¸°");			//í™”ë©´ ì§€ìš°ê¸° ìœ„í•œ ë²„íŠ¼ ìƒì„±
+public class NotepadProgram extends JFrame {		//°£´ÜÇÑ ¸Ş¸ğÀå ÇÁ·Î±×·¥
+	private JTextField notefilename = new JTextField(30);		//ÆÄÀÏÀÌ¸§À» ÀÛ¼ºÇÒ ÅØ½ºÆ®ÇÊµå »ı¼º
+	private JTextArea notefileedit = new JTextArea(15, 55);		//ÆÄÀÏ³»¿ëÀ» ÀÛ¼ºÇÒ ÅØ½ºÆ®¾Æ¸®¾Æ »ı¼º
+	private JButton notefileopen = new JButton("¿­±â");			//ÆÄÀÏ¿­±â¸¦ À§ÇÑ ¹öÆ° »ı¼º
+	private JButton notefilesave = new JButton("ÀúÀå");			//ÆÄÀÏÀúÀåÀ» À§ÇÑ ¹öÆ° »ı¼º
+	private JButton newnote = new JButton("»õ·Î ¸¸µé±â");			//È­¸é Áö¿ì±â À§ÇÑ ¹öÆ° »ı¼º
 	private NotepadProgram() {
-		setTitle("ë©”ëª¨ì¥ ì˜ˆì œ");									//ì°½ ì´ë¦„ ì‘ì„±
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			//ì¢…ë£Œë¬¸ ì‘ì„±
-		Container c = getContentPane();							//ì»¨í…Œì´ë„ˆ ìƒì„±
-		c.setLayout(new FlowLayout());							//ë ˆì´ì•„ì›ƒ ìë™ì„¤ì •
-		notefileopen.setSize(40,40);							//íŒŒì¼ì—´ê¸° ë²„íŠ¼ í¬ê¸°ì„¤ì •
-		notefilesave.setSize(40,40);							//íŒŒì¼ì €ì¥ ë²„íŠ¼ í¬ê¸°ì„¤ì •
-		newnote.setSize(80,40);									//í™”ë©´ì§€ìš°ê¸° ë²„íŠ¼ í¬ê¸°ì„¤ì •
-		c.add(new JScrollPane(notefileedit));					//ìŠ¤í¬ë¡¤ê¸°ëŠ¥ì´ ê°€ëŠ¥í•˜ë„ë¡ íŒŒì¼ë‚´ìš© ì»¨í…Œì´ë„ˆì— ì‚½ì…
-		c.add(notefilename);									//íŒŒì¼ì´ë¦„ ì»¨í…Œì´ë„ˆì— ì‚½ì…
-		c.add(notefileopen);									//íŒŒì¼ì—´ê¸° ë²„íŠ¼ ì»¨í…Œì´ë„ˆì— ì‚½ì…
-		c.add(notefilesave);									//íŒŒì¼ì €ì¥ ë²„íŠ¼ ì»¨í…Œì´ë„ˆì— ì‚½ì…
-		c.add(newnote);											//í™”ë©´ì§€ìš°ê¸° ë²„íŠ¼ ì»¨í…Œì´ë„ˆì— ì‚½ì…
+		setTitle("¸Ş¸ğÀå ¿¹Á¦");									//Ã¢ ÀÌ¸§ ÀÛ¼º
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			//Á¾·á¹® ÀÛ¼º
+		Container c = getContentPane();							//ÄÁÅ×ÀÌ³Ê »ı¼º
+		c.setLayout(new FlowLayout());							//·¹ÀÌ¾Æ¿ô ÀÚµ¿¼³Á¤
+		notefileopen.setSize(40,40);							//ÆÄÀÏ¿­±â ¹öÆ° Å©±â¼³Á¤
+		notefilesave.setSize(40,40);							//ÆÄÀÏÀúÀå ¹öÆ° Å©±â¼³Á¤
+		newnote.setSize(80,40);									//È­¸éÁö¿ì±â ¹öÆ° Å©±â¼³Á¤
+		c.add(new JScrollPane(notefileedit));					//½ºÅ©·Ñ±â´ÉÀÌ °¡´ÉÇÏµµ·Ï ÆÄÀÏ³»¿ë ÄÁÅ×ÀÌ³Ê¿¡ »ğÀÔ
+		c.add(notefilename);									//ÆÄÀÏÀÌ¸§ ÄÁÅ×ÀÌ³Ê¿¡ »ğÀÔ
+		c.add(notefileopen);									//ÆÄÀÏ¿­±â ¹öÆ° ÄÁÅ×ÀÌ³Ê¿¡ »ğÀÔ
+		c.add(notefilesave);									//ÆÄÀÏÀúÀå ¹öÆ° ÄÁÅ×ÀÌ³Ê¿¡ »ğÀÔ
+		c.add(newnote);											//È­¸éÁö¿ì±â ¹öÆ° ÄÁÅ×ÀÌ³Ê¿¡ »ğÀÔ
 		
-		notefileopen.addActionListener(new EventHandler());		//íŒŒì¼ì—´ê¸° ë²„íŠ¼ì„ ë°˜ì‘ì‹œí‚¤ê¸°ìœ„í•œ ì•¡ì…˜ë¦¬ìŠ¤ë„ˆ ê¸°ëŠ¥ ì¶”ê°€
-		notefilesave.addActionListener(new EventHandler());		//íŒŒì¼ì €ì¥ ë²„íŠ¼ì„ ë°˜ì‘ì‹œí‚¤ê¸°ìœ„í•œ ì•¡ì…˜ë¦¬ìŠ¤ë„ˆ ê¸°ëŠ¥ ì¶”ê°€
-		newnote.addActionListener(new EventHandler());			//í™”ë©´ì§€ìš°ê¸° ë²„íŠ¼ì„ ë°˜ì‘ì‹œí‚¤ê¸°ìœ„í•œ ì•¡ì…˜ë¦¬ìŠ¤ë„ˆ ê¸°ëŠ¥ ì¶”ê°€
+		notefileopen.addActionListener(new EventHandler());		//ÆÄÀÏ¿­±â ¹öÆ°À» ¹İÀÀ½ÃÅ°±âÀ§ÇÑ ¾×¼Ç¸®½º³Ê ±â´É Ãß°¡
+		notefilesave.addActionListener(new EventHandler());		//ÆÄÀÏÀúÀå ¹öÆ°À» ¹İÀÀ½ÃÅ°±âÀ§ÇÑ ¾×¼Ç¸®½º³Ê ±â´É Ãß°¡
+		newnote.addActionListener(new EventHandler());			//È­¸éÁö¿ì±â ¹öÆ°À» ¹İÀÀ½ÃÅ°±âÀ§ÇÑ ¾×¼Ç¸®½º³Ê ±â´É Ãß°¡
 		
-		setSize(600,450);						//ì°½í¬ê¸° ì„¤ì •
-		setVisible(true);						//ì°½ ë³´ì´ê²Œ ì„¤ì •
+		setSize(700,450);						//Ã¢Å©±â ¼³Á¤
+		setVisible(true);						//Ã¢ º¸ÀÌ°Ô ¼³Á¤
 	}
-	class EventHandler implements ActionListener {		//ê° ë²„íŠ¼ì— ê¸°ëŠ¥ ì´ë²¤íŠ¸í•¸ë“¤ëŸ¬ì— ì‘ì„±
+	class EventHandler implements ActionListener {		//°¢ ¹öÆ°¿¡ ±â´É ÀÌº¥Æ®ÇÚµé·¯¿¡ ÀÛ¼º
 		@Override
 		public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==notefileopen) {				//íŒŒì¼ì„ ì—´ì—ˆì„ ë•Œ
-			String tmpfilename = notefilename.getText();	//êµ¬ë¬¸ í˜•ì‹ì„ ë§ì¶”ê¸° ìœ„í•´ í…ìŠ¤íŠ¸í•„ë“œ ë‚´ìš© ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë³€í™˜
+		if(e.getSource()==notefileopen) {				//ÆÄÀÏÀ» ¿­¾úÀ» ¶§
+			String tmpfilename = notefilename.getText();	//±¸¹® Çü½ÄÀ» ¸ÂÃß±â À§ÇØ ÅØ½ºÆ®ÇÊµå ³»¿ë ½ºÆ®¸µÀ¸·Î º¯È¯
 			try {
-				BufferedReader reader = new BufferedReader(new FileReader(tmpfilename));		//ë²„í¼ë¦¬ë”ë¡œ íŒŒì¼ì—ì„œ ì½ì–´ì˜¤ê¸°
-				notefileedit.setText("");		//íŒŒì¼ë‚´ìš©ì´ ê²¹ì¹˜ì§€ ì•Šë„ë¡ íŒŒì¼ë‚´ìš©ì‘ì„±ë€ ë¹ˆì¹¸ìœ¼ë¡œ ì´ˆê¸°í™”
-				String line;					//íŒŒì¼ë‚´ìš©ì„ í•œì¤„ì‹ ì½ì–´ì˜¤ê¸° ìœ„í•´ ìŠ¤íŠ¸ë§ ë³€ìˆ˜ ì„ ì–¸
-				while((line=reader.readLine())!=null) {	//ì½ì–´ì˜¨ íŒŒì¼ì—ì„œ ì¤„ì´ ì—†ì–´ì§€ë©´
-					notefileedit.append(line+"\n");		//\nì¶”ê°€
+				BufferedReader reader = new BufferedReader(new FileReader(tmpfilename));		//¹öÆÛ¸®´õ·Î ÆÄÀÏ¿¡¼­ ÀĞ¾î¿À±â
+				notefileedit.setText("");		//ÆÄÀÏ³»¿ëÀÌ °ãÄ¡Áö ¾Êµµ·Ï ÆÄÀÏ³»¿ëÀÛ¼º¶õ ºóÄ­À¸·Î ÃÊ±âÈ­
+				String line;					//ÆÄÀÏ³»¿ëÀ» ÇÑÁÙ½Ä ÀĞ¾î¿À±â À§ÇØ ½ºÆ®¸µ º¯¼ö ¼±¾ğ
+				while((line=reader.readLine())!=null) {	//ÀĞ¾î¿Â ÆÄÀÏ¿¡¼­ ÁÙÀÌ ¾ø¾îÁö¸é
+					notefileedit.append(line+"\n");		//\nÃß°¡
 				}
-				reader.close();						//ìµœì¢… ì™„ë£Œ ì‹œ íŒŒì¼ë¦¬ë”ê¸° ì¢…ë£Œ
-				JOptionPane.showMessageDialog(null, "íŒŒì¼ ì—´ê¸° ì™„ë£Œ");		//íŒŒì¼ ë‚´ìš©ì´ ë‹¤ ì¶œë ¥ë˜ë©´ íŒì—…ìœ¼ë¡œ í™•ì¸
-			}catch(Exception e2) {				//ì˜¤ë¥˜ ë°œìƒì‹œ
-				JOptionPane.showMessageDialog(null, "ì…ì¶œë ¥ ì˜¤ë¥˜");		//ì•ˆë‚´ë¬¸ íŒì—…ìœ¼ë¡œ í™•ì¸
+				reader.close();						//ÃÖÁ¾ ¿Ï·á ½Ã ÆÄÀÏ¸®´õ±â Á¾·á
+				JOptionPane.showMessageDialog(null, "ÆÄÀÏ ¿­±â ¿Ï·á");		//ÆÄÀÏ ³»¿ëÀÌ ´Ù Ãâ·ÂµÇ¸é ÆË¾÷À¸·Î È®ÀÎ
+			}catch(Exception e2) {				//¿À·ù ¹ß»ı½Ã
+				JOptionPane.showMessageDialog(null, "ÀÔÃâ·Â ¿À·ù");		//¾È³»¹® ÆË¾÷À¸·Î È®ÀÎ
 			}
 		}
-		else if(e.getSource()==notefilesave) {		//íŒŒì¼ ì €ì¥í•  ë•Œ
-			String tmpfilename = notefilename.getText();		//êµ¬ë¬¸ í˜•ì‹ì„ ë§ì¶”ê¸° ìœ„í•´ í…ìŠ¤íŠ¸í•„ë“œ ë‚´ìš© ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë³€í™˜
+		else if(e.getSource()==notefilesave) {		//ÆÄÀÏ ÀúÀåÇÒ ¶§
+			String tmpfilename = notefilename.getText();		//±¸¹® Çü½ÄÀ» ¸ÂÃß±â À§ÇØ ÅØ½ºÆ®ÇÊµå ³»¿ë ½ºÆ®¸µÀ¸·Î º¯È¯
 			try {
-				BufferedWriter writer = new BufferedWriter(new FileWriter(tmpfilename));		//ë²„í¼ë¼ì´í„°ë¡œ íŒŒì¼ì´ë¦„ ì‘ì„±
-				writer.write(notefileedit.getText());			//í…ìŠ¤íŠ¸ì•„ë¦¬ì•„ ë‚´ìš© íŒŒì¼ë¡œ ì‘ì„±
-				writer.close();									//ìµœì¢… ì™„ë£Œ ì‹œ íŒŒì¼ì‘ì„±ê¸° ì¢…ë£Œ
-				JOptionPane.showMessageDialog(null, "ì €ì¥ ì™„ë£Œ");			//íŒŒì¼ ì €ì¥ì´ ë‹¤ ì™„ë£Œë˜ë©´ íŒì—…ìœ¼ë¡œ í™•ì¸
-			}catch(Exception e2) {				//ì˜¤ë¥˜ ë°œìƒì‹œ
-				JOptionPane.showMessageDialog(null, "ì €ì¥ ì˜¤ë¥˜");		//ì•ˆë‚´ë¬¸ íŒì—…ìœ¼ë¡œ í™•ì¸
+				BufferedWriter writer = new BufferedWriter(new FileWriter(tmpfilename));		//¹öÆÛ¶óÀÌÅÍ·Î ÆÄÀÏÀÌ¸§ ÀÛ¼º
+				writer.write(notefileedit.getText());			//ÅØ½ºÆ®¾Æ¸®¾Æ ³»¿ë ÆÄÀÏ·Î ÀÛ¼º
+				writer.close();									//ÃÖÁ¾ ¿Ï·á ½Ã ÆÄÀÏÀÛ¼º±â Á¾·á
+				JOptionPane.showMessageDialog(null, "ÀúÀå ¿Ï·á");			//ÆÄÀÏ ÀúÀåÀÌ ´Ù ¿Ï·áµÇ¸é ÆË¾÷À¸·Î È®ÀÎ
+			}catch(Exception e2) {				//¿À·ù ¹ß»ı½Ã
+				JOptionPane.showMessageDialog(null, "ÀúÀå ¿À·ù");		//¾È³»¹® ÆË¾÷À¸·Î È®ÀÎ
 			}
 		}
-		else if(e.getSource()==newnote) {			//í™”ë©´ ì§€ìš¸ ë•Œ
-			notefileedit.setText("");				//í…ìŠ¤íŠ¸ì•„ë¦¬ì•„ ë¹ˆì¹¸ìœ¼ë¡œ ì´ˆê¸°í™”
-			notefilename.setText("");				//í…ìŠ¤íŠ¸í•„ë“œ ë¹ˆì¹¸ìœ¼ë¡œ ì´ˆê¸°í™”
+		else if(e.getSource()==newnote) {			//È­¸é Áö¿ï ¶§
+			notefileedit.setText("");				//ÅØ½ºÆ®¾Æ¸®¾Æ ºóÄ­À¸·Î ÃÊ±âÈ­
+			notefilename.setText("");				//ÅØ½ºÆ®ÇÊµå ºóÄ­À¸·Î ÃÊ±âÈ­
 			}
 		}
 	}
-	public static void main(String [] args) {		//ë©”ì¸í•¨ìˆ˜ ì‹¤í–‰
-		new NotepadProgram();					//í•´ë‹¹ í”„ë¡œê·¸ë¨ ì‹¤í–‰
+	public static void main(String [] args) {		//¸ŞÀÎÇÔ¼ö ½ÇÇà
+		new NotepadProgram();					//ÇØ´ç ÇÁ·Î±×·¥ ½ÇÇà
 	}
 }
